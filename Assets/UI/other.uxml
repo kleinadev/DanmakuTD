@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="Sidebar" focusable="false" style="flex-direction: column; flex-grow: 1; right: 0; width: 300px; position: absolute; bottom: 0; top: 0; background-color: rgba(63, 66, 113, 255); border-top-left-radius: 10px; border-bottom-left-radius: 10px;">
+        <ui:VisualElement name="Resources">
+            <ui:Label text="Power: " display-tooltip-when-elided="true" name="Power" enable-rich-text="true" style="-unity-font-style: bold; color: rgba(255, 255, 255, 255); white-space: normal;" />
+        </ui:VisualElement>
+        <ui:ScrollView name="Towers" style="flex-grow: 1;">
+            <ui:Button text="Focus Tower" display-tooltip-when-elided="true" name="PlaceFocus" enable-rich-text="true" />
+            <ui:Button text="Spread Tower" display-tooltip-when-elided="true" name="PlaceSpread" />
+        </ui:ScrollView>
+        <ui:ScrollView name="Selected" style="height: 250px;" />
+        <ui:Button text="Next Wave" display-tooltip-when-elided="true" name="StartWave" enable-rich-text="false" />
+    </ui:VisualElement>
+</ui:UXML>

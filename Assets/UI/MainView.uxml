@@ -1,0 +1,22 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="Window" style="flex-grow: 1; flex-direction: row;">
+        <ui:VisualElement name="GameWindow" style="flex-grow: 1;" />
+        <ui:VisualElement name="Sidebar" focusable="false" style="flex-direction: column; flex-grow: 0; right: 0; width: 300px; position: relative; bottom: 0; top: 0; background-color: rgb(63, 66, 113); border-top-left-radius: 10px; border-bottom-left-radius: 10px;">
+            <ui:VisualElement name="Resources" style="flex-direction: column;">
+                <ui:GroupBox style="flex-grow: 1; flex-direction: row;">
+                    <ui:Label text="Power: " display-tooltip-when-elided="true" name="PowerLabel" enable-rich-text="true" style="-unity-font-style: bold; color: rgb(255, 255, 255); white-space: normal; font-size: 24px;" />
+                    <ui:Label text="0" display-tooltip-when-elided="true" enable-rich-text="false" name="PowerAmount" binding-path="Power" style="font-size: 24px; -unity-font-style: bold; color: rgb(255, 255, 255);" />
+                </ui:GroupBox>
+                <ui:GroupBox>
+                    <ui:Label text="Lives:" display-tooltip-when-elided="true" name="LivesLabel" style="font-size: 24px; -unity-font-style: bold; color: rgb(255, 255, 255);" />
+                </ui:GroupBox>
+            </ui:VisualElement>
+            <ui:ScrollView name="Towers" style="flex-grow: 1;">
+                <ui:Button text="Focus Tower" display-tooltip-when-elided="true" name="SelectFocus" enable-rich-text="true" style="font-size: 24px;" />
+                <ui:Button text="Spread Tower" display-tooltip-when-elided="true" name="SelectSpread" style="font-size: 24px;" />
+            </ui:ScrollView>
+            <ui:ScrollView name="Selected" style="height: 250px;" />
+            <ui:Button text="Next Wave" display-tooltip-when-elided="true" name="NextWave" enable-rich-text="false" style="font-size: 24px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

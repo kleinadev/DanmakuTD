@@ -10,7 +10,7 @@ public class SpreadBullet : MonoBehaviour, IBulletBehavior
     /// <summary>
     /// Normalized vector for the direction the bullet will travel
     /// </summary>
-    private Vector3 Direction;
+    private Vector2 Direction;
     private float Damage;
 
     public float GetDamage()
@@ -42,19 +42,18 @@ public class SpreadBullet : MonoBehaviour, IBulletBehavior
         SetDamage(damage);
     }
 
-    public void SetAngle(double angle)
+    public void SetAngle(float angle)
     {
         var direction = Vector3.Distance(transform.position, Direction);
-        var perpendicularVector = new Vector3(-Direction.y, Direction.x);
+        var perpendicularVector = new Vector2(-Direction.y, Direction.x);
         float angleScalar = GetVectorMagnitudeFromAngle(angle);
         perpendicularVector = perpendicularVector.normalized * angleScalar;
         Direction = (Direction + perpendicularVector).normalized;
     }
 
-    private float GetVectorMagnitudeFromAngle(double angle)
+    private float GetVectorMagnitudeFromAngle(float angle)
     {
-        var radianAngle = angle * (Math.PI / 180);
-        return (float)Math.Tan(radianAngle);
+        return Mathf.Tan(angle * Mathf.Deg2Rad);
     }
 
     // Start is called before the first frame update

@@ -4,7 +4,7 @@ public class FocusBullet : MonoBehaviour, IBulletBehavior
 {
     private float Speed;
     private GameObject Target;
-    private Vector3 Direction;
+    private Vector2 Direction;
     private float Damage;
 
     public float GetDamage()
@@ -45,11 +45,11 @@ public class FocusBullet : MonoBehaviour, IBulletBehavior
         if (Target)
         {
             Direction = (Target.transform.position - transform.position).normalized;
-            transform.position = Vector3.MoveTowards(transform.position, Target.transform.position, Speed);
+            transform.position = Vector2.MoveTowards(transform.position, Target.transform.position, Speed);
         }
         else
         {
-            transform.Translate(Direction);
+            transform.Translate(Direction * Speed);
         }
     }
 

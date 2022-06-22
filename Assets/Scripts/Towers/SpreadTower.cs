@@ -14,18 +14,7 @@ public class SpreadTower : MonoBehaviour, ITowerBehavior
     public float Cooldown { get; set; } = 0;
     public float Range { get; set; } = 5;
 
-    //private int BulletNumber = 3;
-
-
-    // Start is called before the first frame update
-    public void Start()
-    {
-    }
-
-    // Update is called once per frame
-    public void Update()
-    {
-    }
+    private int ExtraBullets = 2;
 
     public void FireBullet(GameObject target)
     {
@@ -35,7 +24,7 @@ public class SpreadTower : MonoBehaviour, ITowerBehavior
 
     private void FireSpreadBullets(GameObject target)
     {
-        for (int i = -1; i <= 1; i++)
+        for (int i = -ExtraBullets; i <= ExtraBullets; i++)
         {
             var bullet = CreateSpreadBullet(target);
 

@@ -58,13 +58,23 @@
     <Compile Include="Assets\Scripts\Bullets\IBulletBehavior.cs" />
     <Compile Include="Assets\Scripts\Towers\SpreadTower.cs" />
     <Compile Include="Assets\Scripts\Towers\FocusTower.cs" />
-    <Compile Include="Assets\Scripts\Hexmap.cs" />
+    <Compile Include="Assets\Scripts\HexmapController.cs" />
+    <Compile Include="Assets\Scripts\UI\MainView.cs" />
     <Compile Include="Assets\Scripts\Enemies\IEnemyBehavior.cs" />
-    <Compile Include="Assets\Scripts\EnemyMovement.cs" />
-    <Compile Include="Assets\Scripts\EnemyModel.cs" />
+    <Compile Include="Assets\Scripts\Towers\TowerPlacementController.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyModel.cs" />
     <Compile Include="Assets\Scripts\Bullets\SpreadBullet.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\ResourceController.cs" />
+    <Compile Include="Assets\Scripts\Towers\TowerPrefabs.cs" />
     <Compile Include="Assets\Scripts\Towers\ITowerBehavior.cs" />
+    <Compile Include="Assets\Scripts\GridInteractionController.cs" />
+    <Compile Include="Assets\Scripts\MainController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\UI\other.uxml" />
+    <None Include="Assets\UI\MainView.uxml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

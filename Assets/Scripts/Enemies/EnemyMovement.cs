@@ -8,7 +8,7 @@ public class EnemyMovement : MonoBehaviour
     private float moveSpeed;
     private int currentPathNode;
     private int finalPathNode;
-    private Vector3[] pathNodes;
+    private Vector2[] pathNodes;
 
     // Start is called before the first frame update
     private void Start()
@@ -22,9 +22,9 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (transform.position != pathNodes[currentPathNode])
+        if ((Vector2)transform.position != pathNodes[currentPathNode])
         {
-            transform.position = Vector3.MoveTowards(transform.position, pathNodes[currentPathNode], moveSpeed);
+            transform.position = Vector2.MoveTowards(transform.position, pathNodes[currentPathNode], moveSpeed);
         }
         else if (currentPathNode != finalPathNode) {
             currentPathNode = (currentPathNode + 1);
@@ -35,9 +35,9 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private Vector3[] FindPathNodes(Transform path)
+    private Vector2[] FindPathNodes(Transform path)
     {
-        Vector3[] nodesList = new Vector3[path.childCount];
+        Vector2[] nodesList = new Vector2[path.childCount];
         for (int i = 0; i < path.childCount; i++)
         {
             var child = path.GetChild(i);
